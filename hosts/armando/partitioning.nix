@@ -1,6 +1,7 @@
-{ lib, disko.nixosModules.disko, ... }:
+{ lib, inputs, ... }:
 # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko partitioning.nix
 {
+  imports = [ inputs.disko.nixosModules.disko ];
   disko.devices = {
     disk.main = {
       device = lib.mkDefault "/dev/vda";
