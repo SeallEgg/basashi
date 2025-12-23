@@ -1,4 +1,11 @@
-{ pkgs, lib, config, inputs, inputs', ... }: let
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  inputs',
+  ...
+}: let
   inherit (lib) mkOption types;
   inherit (lib.modules) mkAliasOptionModule;
   inherit (config.cfg.core) username;
@@ -29,6 +36,7 @@ in {
       users.${username} = {
         enable = true;
       };
+      extraModules = [inputs.hjem-rum.hjemModules.default];
     };
     environment.sessionVariables = {
       XDG_CONFIG_HOME = "$HOME/.config";
