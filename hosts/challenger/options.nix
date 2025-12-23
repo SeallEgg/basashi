@@ -1,7 +1,7 @@
 {
-    cfg = {
-        core = {
-            username = "seal";
-        };
+  cfg = {
+    core = {
+      username = "seal";
     };
+  };
 }

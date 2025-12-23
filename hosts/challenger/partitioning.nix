@@ -1,4 +1,4 @@
-{ lib, ... }:
+{lib, ...}:
 # sudo nix --experimental-features "nix-command flakes" run 'github:nix-community/disko/latest#disko-install' -- --flake basashi#challenger
 {
   disko.devices = {
@@ -27,26 +27,26 @@
               extraArgs = ["-f"];
               subvolumes = {
                 "/root" = {
-                    mountpoint = "/";
-                    mountOptions = [ "subvol=root" "compress=zstd:1" "noatime"];
-                  };
+                  mountpoint = "/";
+                  mountOptions = ["subvol=root" "compress=zstd:1" "noatime"];
+                };
                 "/nix" = {
-                    mountpoint = "/nix";
-                    mountOptions = [ "subvol=nix" "compress-force=zstd:1" "noatime"];
-                  };
+                  mountpoint = "/nix";
+                  mountOptions = ["subvol=nix" "compress-force=zstd:1" "noatime"];
+                };
                 "/var" = {
-                    mountpoint = "/var";
-                    mountOptions = [ "subvol=var" "compress=zstd:1" "noatime" "nodatacow" "nodatasum"];
-                  };
+                  mountpoint = "/var";
+                  mountOptions = ["subvol=var" "compress=zstd:1" "noatime" "nodatacow" "nodatasum"];
+                };
                 # Snapshot these
                 "/home" = {
-                    mountpoint = "/home";
-                    mountOptions = [ "subvol=home" "compress=zstd:1" "noatime"];
-                  };
+                  mountpoint = "/home";
+                  mountOptions = ["subvol=home" "compress=zstd:1" "noatime"];
+                };
                 "/var/lib" = {
-                    mountpoint = "/var/lib";
-                    mountOptions = [ "subvol=var/lib" "compress=zstd:1" "noatime"];
-                  };
+                  mountpoint = "/var/lib";
+                  mountOptions = ["subvol=var/lib" "compress=zstd:1" "noatime"];
+                };
               };
             };
           };
@@ -54,8 +54,10 @@
       };
     };
   };
-  swapDevices = [{
-    device = "/var/swap";
-    size = 16*1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/swap";
+      size = 16 * 1024;
+    }
+  ];
 }

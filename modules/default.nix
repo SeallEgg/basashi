@@ -16,4 +16,3 @@ in {
     imports = builtins.filter filterFile allNixFiles;
   };
 }
-
