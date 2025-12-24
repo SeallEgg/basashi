@@ -17,12 +17,8 @@ in {
         enable = true;
         enable32Bit = true;
       };
-      amdgpu = {
-        initrd.enable = true;
-        amdvlk.enable = true;
-      };
+      amdgpu.initrd.enable = true;
     };
+    services.xserver.videoDrivers = ["amdgpu"];
   };
-
-  services.xserver.videoDrivers = ["amdgpu"];
 }
