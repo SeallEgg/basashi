@@ -16,5 +16,8 @@
         gaming.enable = true;
       };
     };
+    services = {
+      swww.enable = true;
+    };
   };
 }
