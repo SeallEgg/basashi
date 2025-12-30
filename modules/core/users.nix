@@ -12,7 +12,7 @@
 in {
   options.cfg.core.username = mkOption {
     type = types.str;
-    default = "seal";
+    default = "user";
     description = "Sets the username for the system.";
   };
   imports = [
