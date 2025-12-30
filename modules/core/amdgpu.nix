@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkMerge;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.cfg.core.amdgpu;
 in {
   options.cfg.core.amdgpu = {
