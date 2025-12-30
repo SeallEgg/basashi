@@ -29,6 +29,4 @@
   zramSwap.enable = true;
 
   hardware.enableRedistributableFirmware = true;
-
-  time.timeZone = "America/Sao_Paulo";
 }
