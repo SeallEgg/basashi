@@ -1,4 +1,10 @@
 # basashi
-My personal nixos configuration. Very much a WIP.
+My personal NixOS configuration. Very much a WIP.
 
-Mostly based on the structure of [fazzi's NixOhEss configuration](https://gitlab.com/fazzi/nixohess) (in fact, some files are stolen verbatim).
+### hosts:
+- enterprise: simple config for VMs. Not really in use at the moment.
+- columbia: my desktop computer (7800X3D + 4070 Super), used for gaming and playing around with Linux. 
+- challenger: my Thinkpad L13 Gen 3 AMD, used primarily for studying in university.
+- ~~discovery~~: my homelab/NAS. Not yet built. 
+
+Mostly based on the structure of [fazzi's NixOhEss configuration](https://gitlab.com/fazzi/nixohess). In fact, some files were (at least initially) stolen verbatim.
