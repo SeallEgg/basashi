@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  hostConfig,
   ...
 }: {
   boot = {
@@ -16,11 +17,14 @@
       };
     };
 
+    kernelParams = map (m: "video=${m.name}:${m.res}") hostConfig.monitors;
+
     tmp = {
       useTmpfs = true;
       tmpfsSize = "50%";
     };
   };
+
   services.swapspace.enable = true;
   zramSwap.enable = true;
 
