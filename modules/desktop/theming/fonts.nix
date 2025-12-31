@@ -8,7 +8,7 @@
   inherit (lib) mkEnableOption mkIf;
   cfg = config.cfg.desktop.environment;
 in {
-  config = mkif cfg.niri.enable or cfg.plasma.enable {
+  config = mkIf cfg.niri.enable or cfg.plasma.enable {
     imports = [inputs.apple-fonts.nixosModules.default];
     fonts = {
       apple-fonts.enable = true;
