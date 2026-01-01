@@ -14,7 +14,6 @@
 
   boot.initrd.availableKernelModules = ["nvme" "ehci_pci" "xhci_pci" "sdhci_pci"];
   hardware.cpu.amd.updateMicrocode = true;
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  services.libinput.enable = true;
+  services.libinput.enable = true; # touchpad
 }
