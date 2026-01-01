@@ -13,12 +13,20 @@
         ];
       };
     };
+
     desktop = {
+      environment = {
+        plasma.enable = true;
+        niri.enable = true;
+        rofi.enable = true;
+      };
       apps = {
         gaming.enable = true;
       };
     };
+
     services = {
+      sddm.enable = true;
       swww.enable = true;
     };
   };
