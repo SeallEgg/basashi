@@ -19,9 +19,10 @@ in {
 
     programs.gamemode.enable = true;
 
-    environment.systemPackages = with pkgs; [
+    hj.packages = with pkgs; [
       mangohud
       protonup-qt
+      apotris
 
       (prismlauncher.override {
         additionalPrograms = [ffmpeg]; # required by some mods
