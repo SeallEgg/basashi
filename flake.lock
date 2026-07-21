@@ -1,6 +1,10 @@
 {
   "nodes": {
+<<<<<<< HEAD
     "root": {}
+=======
+    "root": {}
+>>>>>>> d9e05f6 (switch to tack for inputs)
   },
   "root": "root",
   "version": 7
