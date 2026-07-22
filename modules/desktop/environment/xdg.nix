@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [ inputs.nixdg-ninja.nixosModules.nixdg-ninja ];
 
   options.basashi.desktop.environment.xdg.enable =
@@ -19,17 +19,8 @@
 
       portal = {
         enable = true;
-        extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
-        config = {
-          common.default = [ "kde" ];
-          # force kde for everything except what has to be gnome
-          niri = lib.mkIf config.programs.niri.enable (lib.mkForce {
-            default = [ "kde" ];
-            "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-            "org.freedesktop.impl.portal.RemoteDesktop" = [ "gnome" ];
-            "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
-          });
-        };
+        extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde pkgs.xdg-desktop-portal-gtk ];
+        config.common.default = [ "kde" ];
       };
     };
   };
