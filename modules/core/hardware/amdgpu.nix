@@ -3,10 +3,7 @@
 
   config = lib.mkIf config.basashi.core.hardware.gpu.amd.enable {
     hardware = {
-      graphics = {
-        enable = true;
-        enable32Bit = true;
-      };
+      graphics.enable = true;
       amdgpu.initrd.enable = true;
     };
     services.xserver.videoDrivers = [ "amdgpu" ];
