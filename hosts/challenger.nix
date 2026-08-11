@@ -1,6 +1,6 @@
 { inputs, ... }: {
   services.libinput.enable = true; # touchpad
-
+  boot.kernelParams = [ "i8042.reset" ]; # fix keyboard not working on boot
   basashi = {
     core = {
       hardware = {
