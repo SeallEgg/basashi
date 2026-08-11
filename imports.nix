@@ -29,7 +29,6 @@ let
       };
       modules = [
         outputs.nixosModules.default
-        inputs.chaotic.nixosModules.default
         path
         {
           nixpkgs.overlays = with inputs; [

@@ -2,7 +2,6 @@
   options.basashi.core.hardware.gpu.amd = { enable = lib.mkEnableOption "amdgpu"; };
 
   config = lib.mkIf config.basashi.core.hardware.gpu.amd.enable {
-    chaotic.mesa-git.enable = true;
     hardware = {
       graphics = {
         enable = true;

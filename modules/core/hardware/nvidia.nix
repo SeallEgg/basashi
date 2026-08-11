@@ -6,7 +6,6 @@ in {
   options.basashi.core.hardware.gpu.nvidia = { enable = lib.mkEnableOption "nvidia"; };
 
   config = mkIf cfg.enable {
-    # chaotic.mesa-git.enable = true;
     hardware = {
       graphics = {
         enable = true;

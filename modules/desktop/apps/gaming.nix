@@ -7,7 +7,7 @@
       package = pkgs.millennium-steam;
       gamescopeSession.enable = true;
       remotePlay.openFirewall = true;
-      extraCompatPackages = [ pkgs.proton-ge-custom pkgs."proton-cachyos_x86_64_v3" ];
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
     programs.gamemode.enable = true;
