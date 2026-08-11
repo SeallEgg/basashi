@@ -5,7 +5,10 @@ in {
     type = types.listOf (types.submodule {
       options = {
         name = mkOption { type = types.str; };
-        res = mkOption { type = types.str; };
+        res = mkOption {
+          type = types.str;
+          default = "1920x1080@60";
+        };
         pos = mkOption {
           type = types.submodule {
             options = {

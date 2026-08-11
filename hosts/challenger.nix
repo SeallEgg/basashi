@@ -6,15 +6,7 @@
       hardware = {
         cpu.arch = "znver3";
         gpu.amd.enable = true;
-        monitors = [{
-          name = "eDP-1";
-          res = "1920x1080@60";
-          pos = {
-            x = 0;
-            y = 0;
-          };
-          scale = 1.0;
-        }];
+        monitors = [{ name = "eDP-1"; }];
       };
       kernel = "cachy-latest";
       username = "seal";
