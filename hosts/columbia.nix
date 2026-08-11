@@ -44,7 +44,13 @@
     };
 
     desktop = {
-      apps = { gaming.enable = true; };
+      apps = {
+        gaming = {
+          minecraft.enable = true;
+          steam.enable = true;
+          steam.ckan.enable = true;
+        };
+      };
       environment = {
         matugen.enable = true;
         niri.enable = true;

@@ -26,7 +26,7 @@
     };
 
     desktop = {
-      apps = { gaming.enable = true; };
+      apps.gaming.steam.enable = true;
       environment = {
         matugen.enable = true;
         niri.enable = true;
