@@ -30,8 +30,10 @@ in {
     description = "Kernel type to use";
   };
   config = {
-    nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
-    nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+    nix.settings = lib.mkIf (cfg != "lts" || cfg != "latest") {
+      substituters = [ "https://attic.xuyh0120.win/lantian" ];
+      trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+    };
 
     boot.kernelPackages = kernelPackage;
   };

@@ -1,4 +1,7 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
+  # god knows why this can´t be installed as a user package
+  environment.systemPackages = [ pkgs.obs-studio ];
+
   basashi = {
     core = {
       hardware = {
