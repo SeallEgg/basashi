@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
-let cfg = config.basashi.desktop.environment;
-in {
-  config = lib.mkIf cfg.niri.enable or cfg.plasma.enable {
+{ config, lib, pkgs, ... }: {
+  options.basashi.desktop.apps.kitty.enable =
+    lib.mkEnableOption "the kitty terminal emulator";
+  config = lib.mkIf config.basashi.desktop.apps.kitty.enable {
     hj = {
       packages = [ pkgs.kitty ];
       xdg.config.files."kitty/kitty.conf".text = ''

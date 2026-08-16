@@ -34,7 +34,7 @@ ForegroundVisited=155,89,182
 
 [Colors:Complementary]
 BackgroundAlternate=30,87,116
-BackgroundNormal={{ colors.surface.default.hex_stripped }}
+BackgroundNormal=#9e{{ colors.surface.default.hex_stripped }}
 DecorationFocus={{ colors.primary_container.default.hex }}
 DecorationHover={{ colors.primary_container.default.hex }}
 ForegroundActive={{ colors.primary_container.default.hex }}
@@ -76,7 +76,7 @@ ForegroundPositive=23,104,57
 ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate={{ colors.surface.default.hex_stripped }}
+BackgroundAlternate=#9e{{ colors.surface.default.hex_stripped }}
 BackgroundNormal=41,44,48
 DecorationFocus={{ colors.primary_container.default.hex }}
 DecorationHover={{ colors.primary_container.default.hex }}

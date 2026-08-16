@@ -12,13 +12,15 @@ in {
         pos = mkOption {
           type = types.submodule {
             options = {
-              x = mkOption { type = types.int; };
-              y = mkOption { type = types.int; };
+              x = mkOption {
+                type = types.int;
+                default = 0;
+              };
+              y = mkOption {
+                type = types.int;
+                default = 0;
+              };
             };
-          };
-          default = {
-            x = 0;
-            y = 0;
           };
         };
         scale = mkOption {
@@ -35,6 +37,7 @@ in {
   };
 
   config = {
-    boot.kernelParams = map (m: "video=${m.name}:${m.res}") config.basashi.core.hardware.monitors;
+    boot.kernelParams =
+      map (m: "video=${m.name}:${m.res}") config.basashi.core.hardware.monitors;
   };
 }

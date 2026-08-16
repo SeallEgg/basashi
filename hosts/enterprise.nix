@@ -1,5 +1,7 @@
 {
   basashi = {
+    presets.terminal = true;
+
     core = {
       username = "seal";
       virtualization.guest = {
@@ -10,12 +12,6 @@
         file.enable = false;
         zram.enable = true;
       };
-    };
-
-    terminal = {
-      fish.enable = true;
-      git.name = "seallegg";
-      git.email = "seallegg@pm.me";
     };
   };
 }

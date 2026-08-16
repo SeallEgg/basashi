@@ -1,113 +1,80 @@
 { inputs, ... }: {
   services.libinput.enable = true; # touchpad
-  boot.kernelParams = [ "i8042.reset" ]; # fix keyboard not working on boot
   basashi = {
+    presets.laptop = true;
+
     core = {
+      username = "seal";
+      kernel = "cachy-latest";
       hardware = {
+        cpu.type = "amd";
         cpu.arch = "znver3";
         gpu.amd.enable = true;
         monitors = [{ name = "eDP-1"; }];
       };
-      kernel = "cachy-latest";
-      username = "seal";
-      networking = {
-        DoT.enable = true;
-        networkmanager.enable = true;
-      };
-      swap.zram.enable = true;
     };
 
-    desktop = {
-      apps.gaming.steam.enable = true;
-      environment = {
-        matugen.enable = true;
-        niri.enable = true;
-        rofi.enable = true;
-      };
-    };
+    desktop.apps.gaming.steam.enable = true;
 
-    services = {
-      automounting.enable = true;
-      avahi.enable = true;
-      awww.enable = true;
-      hibernation = {
-        enable = true;
-        resumeDevice = "/dev/disk/by-id/nvme-eui.5cdfb8038100270a-part2";
-        resumeOffset = "18442029";
-      };
-      pipewire.enable = true;
-      plymouth.enable = true;
-      polkit.enable = true;
-      powersaving.enable = true;
-      printing.enable = true;
-      sddm.enable = true;
-      swaync.enable = true;
+    services.hibernation = {
+      enable = true;
+      resumeDevice = "/dev/disk/by-id/nvme-eui.5cdfb8038100270a-part2";
+      resumeOffset = "18442029";
     };
-    terminal = {
-      fish.enable = true;
-      rusty.enable = true;
-      ohMyPosh.enable = true;
-      agents.enable = true;
-      git.name = "SeallEgg";
-      git.email = "seallegg@pm.me";
-    };
+    terminal.git.name = "seallegg";
   };
 
   # partitioning
-  imports = [
-    inputs.disko.nixosModules.disko
-    {
-      disko.devices = {
-        disk.main = {
-          device = "/dev/disk/by-id/nvme-eui.5cdfb8038100270a";
-          type = "disk";
-          content = {
-            type = "gpt";
-            partitions = {
-              boot = {
-                size = "1G";
-                type = "EF00";
-                content = {
-                  type = "filesystem";
-                  format = "vfat";
-                  mountpoint = "/boot";
-                  mountOptions = [ "umask=0077" ];
+
+  disko.devices = {
+    disk.main = {
+      device = "/dev/disk/by-id/nvme-eui.5cdfb8038100270a";
+      type = "disk";
+      content = {
+        type = "gpt";
+        partitions = {
+          boot = {
+            size = "1G";
+            type = "EF00";
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
+              mountOptions = [ "umask=0077" ];
+            };
+          };
+          root = {
+            size = "100%";
+            content = {
+              type = "btrfs";
+              extraArgs = [ "-f" ];
+              subvolumes = {
+                "/" = {
+                  mountpoint = "/";
+                  mountOptions = [ "subvol=root" "compress=zstd:1" "noatime" ];
                 };
-              };
-              root = {
-                size = "100%";
-                content = {
-                  type = "btrfs";
-                  extraArgs = [ "-f" ];
-                  subvolumes = {
-                    "/" = {
-                      mountpoint = "/";
-                      mountOptions = [ "subvol=root" "compress=zstd:1" "noatime" ];
-                    };
-                    "/nix" = {
-                      mountpoint = "/nix";
-                      mountOptions = [ "subvol=nix" "compress-force=zstd:1" "noatime" ];
-                    };
-                    "/var" = {
-                      mountpoint = "/var";
-                      mountOptions =
-                        [ "subvol=var" "compress=zstd:1" "noatime" "nodatacow" "nodatasum" ];
-                    };
-                    "/home" = {
-                      mountpoint = "/home";
-                      mountOptions = [ "subvol=home" "compress=zstd:1" "noatime" ];
-                    };
-                    "/var/lib" = {
-                      mountpoint = "/var/lib";
-                      mountOptions = [ "subvol=var/lib" "compress=zstd:1" "noatime" ];
-                    };
-                  };
+                "/nix" = {
+                  mountpoint = "/nix";
+                  mountOptions = [ "subvol=nix" "compress-force=zstd:1" "noatime" ];
+                };
+                "/var" = {
+                  mountpoint = "/var";
+                  mountOptions =
+                    [ "subvol=var" "compress=zstd:1" "noatime" "nodatacow" "nodatasum" ];
+                };
+                "/home" = {
+                  mountpoint = "/home";
+                  mountOptions = [ "subvol=home" "compress=zstd:1" "noatime" ];
+                };
+                "/var/lib" = {
+                  mountpoint = "/var/lib";
+                  mountOptions = [ "subvol=var/lib" "compress=zstd:1" "noatime" ];
                 };
               };
             };
           };
         };
       };
-    }
-  ];
+    };
+  };
 }

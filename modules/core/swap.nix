@@ -81,10 +81,7 @@ in {
   };
 
   config = mkMerge [
-    {
-      basashi.core.swap.file.enable = mkDefault true;
-      boot.kernel.sysctl."vm.swappiness" = cfg.swappiness;
-    }
+    { boot.kernel.sysctl."vm.swappiness" = cfg.swappiness; }
 
     (mkIf cfg.file.enable {
       swapDevices = [{

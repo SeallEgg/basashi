@@ -1,8 +1,10 @@
-{ config, inputs, lib, pkgs, ... }:
-let cfg = config.basashi.desktop.environment;
-in {
+{ config, inputs, lib, pkgs, ... }: {
   imports = [ inputs.apple-fonts.nixosModules.default ];
-  config = lib.mkIf cfg.niri.enable or cfg.plasma.enable {
+
+  options.basashi.desktop.environment.fonts.enable =
+    lib.mkEnableOption "the desktop font set and fontconfig defaults";
+
+  config = lib.mkIf config.basashi.desktop.environment.fonts.enable {
     fonts = {
       apple-fonts.enable = true;
       packages = with pkgs; [
