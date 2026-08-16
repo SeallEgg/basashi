@@ -29,6 +29,7 @@ let
       };
       modules = [
         outputs.nixosModules.default
+        inputs.disko.nixosModules.disko
         path
         {
           nixpkgs.overlays = with inputs; [

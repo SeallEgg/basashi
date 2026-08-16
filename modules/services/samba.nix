@@ -18,7 +18,7 @@ in {
     };
     trustedSubnets = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ "192.168.1.0/24" ];
+      default = [ ];
       description = "Subnets allowed to connect to Samba (hosts allow).";
     };
     interface = lib.mkOption {
@@ -71,6 +71,6 @@ in {
       lib.mapAttrsToList (name: path: "d ${path} 0775 ${config.basashi.core.username} users - -")
       cfg.shares;
 
-    basashi.services.avahi.enable = true;
+    basashi.services.avahi.enable = lib.mkDefault true;
   };
 }

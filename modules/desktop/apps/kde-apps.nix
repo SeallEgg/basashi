@@ -1,7 +1,8 @@
-{ config, lib, pkgs, ... }:
-let cfg = config.basashi.desktop.environment;
-in {
-  config = lib.mkIf cfg.niri.enable or cfg.plasma.enable {
+{ config, lib, pkgs, ... }: {
+  options.basashi.desktop.apps.kdeApps.enable =
+    lib.mkEnableOption "the KDE file manager and viewer stack";
+
+  config = lib.mkIf config.basashi.desktop.apps.kdeApps.enable {
     environment = {
       systemPackages = with pkgs; [
         kdePackages.qtsvg
@@ -18,11 +19,9 @@ in {
     hj = {
       packages = with pkgs; [
         kdePackages.dolphin
-        kdePackages.kfind
         kdePackages.gwenview
         kdePackages.ark
         kdePackages.filelight
-        kdePackages.ktorrent
         kdePackages.okular
       ];
       xdg.config.files."kdeglobals" = {
@@ -30,7 +29,7 @@ in {
         value = {
           General = {
             TerminalApplication = "kitty";
-            BrowserApplication = "floorp.desktop";
+            BrowserApplication = "helium.desktop";
           };
           KDE.widgetStyle = "qt6ct";
           UiSettings.ColorScheme = "Darkly";
