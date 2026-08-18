@@ -1,5 +1,4 @@
-{ inputs, ... }: {
-  services.libinput.enable = true; # touchpad
+{
   basashi = {
     presets.laptop = true;
 

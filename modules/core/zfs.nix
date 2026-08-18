@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   options.basashi.core.zfs = { enable = lib.mkEnableOption "ZFS support"; };
 
   config = lib.mkIf config.basashi.core.zfs.enable {

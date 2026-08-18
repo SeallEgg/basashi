@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
 let def = lib.mkOverride 900;
 in {
-  options.basashi.presets.desktop =
-    lib.mkEnableOption "the default desktop bundle";
+  options.basashi.presets.desktop = lib.mkEnableOption "the default desktop bundle";
 
   config = lib.mkIf config.basashi.presets.desktop {
     basashi = {
@@ -43,6 +42,7 @@ in {
       services = {
         automounting.enable = def true;
         awww.enable = def true;
+        compat.enable = def true;
         pipewire.enable = def true;
         plymouth.enable = def true;
         polkit.enable = def true;
