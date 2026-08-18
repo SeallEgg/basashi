@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, ... }:
 let
   inherit (lib.modules) mkAliasOptionModule;
   inherit (config.basashi.core) username;

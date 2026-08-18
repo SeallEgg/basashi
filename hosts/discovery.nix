@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{
   networking.hostId = "7f833560";
 
   basashi = {
@@ -40,6 +40,8 @@
           interface = "enp4s0";
         };
       };
+      homeAssistant = { enable = true; };
+      #klipper = { enable = true; };
     };
 
   };

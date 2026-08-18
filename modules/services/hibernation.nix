@@ -33,7 +33,7 @@ in {
     ];
 
     boot = {
-      resumeDevice = cfg.resumeDevice;
+      inherit (cfg) resumeDevice;
       kernelParams = mkIf (cfg.resumeOffset != null) [ "resume_offset=${cfg.resumeOffset}" ];
     };
 

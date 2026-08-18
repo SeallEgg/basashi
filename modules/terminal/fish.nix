@@ -9,7 +9,7 @@
     };
   };
 
-  config = lib.mkIf (config.basashi.terminal.fish.enable) {
+  config = lib.mkIf config.basashi.terminal.fish.enable {
     users.users.${config.basashi.core.username}.shell = lib.mkForce pkgs.fish;
 
     environment.systemPackages = with pkgs; [

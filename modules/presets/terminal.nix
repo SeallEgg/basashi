@@ -12,7 +12,6 @@ in {
       ohMyPosh.enable = def true;
       rusty.enable = def true;
     };
-
-    environment.systemPackages = with pkgs; [ neovim fastfetch btop ];
+    environment.systemPackages = with pkgs; [ neovim fastfetch btop usbutils ];
   };
 }
