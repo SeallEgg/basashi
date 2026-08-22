@@ -54,6 +54,61 @@ window-rule {
     }
 }
 
+// generic transient dialogs
+window-rule {
+    match title=r#"^(Open|Save)( File| Files| As| Image| a File| Folder)?$"#
+    match title=r#"^(Select|Choose) (a )?(File|Files|Folder|Directory|Image)"#
+    match title=r#"^(Export|Import)( Image| File)?$"#
+    match title=r#"^(Preferences|Settings|Configure|Properties|About)"#
+    match title=r#"^(Authentication Required|Authenticate)$"#
+    match title=r#"^(Confirm|Warning|Error|Question)$"#
+    open-floating true
+    default-column-width { proportion 0.45; }
+    default-window-height { proportion 0.55; }
+}
+
+// portals and the polkit agent
+window-rule {
+    match app-id=r#"^xdg-desktop-portal-(kde|gnome|gtk)$"#
+    match app-id=r#"^polkit-mate-authentication-agent-1$"#
+    open-floating true
+}
+
+// picture in picture but not focused
+window-rule {
+    match title=r#"^Picture[- ]in[- ][Pp]icture$"#
+    open-floating true
+    open-focused false
+    default-column-width { fixed 480; }
+    default-window-height { fixed 270; }
+}
+
+// system config panels and small utilities
+window-rule {
+    match title=r#"^Volume Control?$"#
+    match app-id=r#"^nm-connection-editor$"#
+    match app-id=r#"^blueman-manager$"#
+    match app-id=r#"^qt6ct$"#
+    match app-id=r#"^org\.kde\.ark$"#
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.6; }
+}
+
+// steam
+window-rule {
+    match app-id=r#"^steam$"#
+    exclude title=r#"^Steam$"#
+    open-floating true
+}
+
+// other popouts
+window-rule {
+    match app-id=r#"^equibop$"# title=r#"Popout"#
+    match app-id=r#"^org\.prismlauncher\.PrismLauncher$"# title=r#"^(Progress|Accounts|Add Account)"#
+    open-floating true
+}
+
 layer-rule {
     match namespace="rofi"
     background-effect {

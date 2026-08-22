@@ -1,7 +1,10 @@
 { config, inputs, lib, pkgs, ... }: {
   imports = [ inputs.nixdg-ninja.nixosModules.nixdg-ninja ];
 
-  config = {
+  options.basashi.desktop.environment.xdg.enable =
+    lib.mkEnableOption "xdg portal routing and mime defaults";
+
+  config = lib.mkIf config.basashi.desktop.environment.xdg.enable {
     programs.nixdg-ninja.enable = true;
 
     xdg = {

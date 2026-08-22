@@ -36,6 +36,7 @@ in {
           matugen.enable = def true;
           niri.enable = def true;
           rofi.enable = def true;
+          xdg.enable = def true;
         };
       };
 
