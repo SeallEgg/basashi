@@ -11,17 +11,9 @@
     "type": "github",
     "owner": "xddxdd",
     "repo": "nix-cachyos-kernel",
-    "rev": "c9a4fc582b213bfc8cc9068302c7ad72abc36c7c",
-    "narHash": "sha256-k6HoyMr33AtlCxdxEmq15uLbwosj1KNxN/H2DYlFrwg=",
-    "lastModified": 1787162113
-  },
-  "chaotic": {
-    "type": "github",
-    "owner": "chaotic-cx",
-    "repo": "nyx",
-    "rev": "962d6a8e88f5f81750a928475d72b25d49461752",
-    "narHash": "sha256-fCC0jvRmODxUqZ+TrJOlsNYjeEnnSVDQ+9r/xkx0/Ng=",
-    "lastModified": 1787135913
+    "rev": "8b175fd266e94395ee7b1edc4578f7c8ecc74626",
+    "narHash": "sha256-8Tlb8D07EvNJ37S7wPYn/+lZ/eBRIvfLvrne3pvjd2A=",
+    "lastModified": 1787421204
   },
   "disko": {
     "type": "github",
@@ -35,25 +27,25 @@
     "type": "github",
     "owner": "schembriaiden",
     "repo": "helium-browser-nix-flake",
-    "rev": "11edc339e075f16b356852096420ecd966462cc1",
-    "narHash": "sha256-legFYpDokCOzwAPmyH7mDi+2jkllaeE+czhJifeQsFU=",
-    "lastModified": 1786886160
+    "rev": "72a3f0cd428f04e1da9be5ea9554409f00ee4b20",
+    "narHash": "sha256-HSyz9Jbpz2Iz43lC1yYv2T+T3Lv+6coLLDv2lFv1SfE=",
+    "lastModified": 1787300923
   },
   "hjem": {
     "type": "github",
     "owner": "feel-co",
     "repo": "hjem",
-    "rev": "b610953d0c56da6b28fd39c21bd193b88e91341c",
-    "narHash": "sha256-qwppDYdtxqtDpI1iSp7bs8prOJ0KQSvhJchfROD04f0=",
-    "lastModified": 1785929776
+    "rev": "7cd7f1c567beaf5527781e0b51647a98acde54e6",
+    "narHash": "sha256-hMgbN6InoW+S5G/cqGrVwHUmOJcGIT/yUg1Xe6y7t8Q=",
+    "lastModified": 1787194407
   },
   "hjem-rum": {
     "type": "github",
     "owner": "snugnug",
     "repo": "hjem-rum",
-    "rev": "3e265c5f7da7bfc780dfc1fda5fc93735dbe18e7",
-    "narHash": "sha256-Fc9Gr+DKX30K57ty4ooLhM9uzNAzzB3LWz/o4zAiNRc=",
-    "lastModified": 1787163343
+    "rev": "217c6e1f445b3973ca8f988f070c9b84cceaa1ca",
+    "narHash": "sha256-LLToYudTlFqNY0NsG//CnE2I/zF0cpktX44ZhFJ2alY=",
+    "lastModified": 1787315974
   },
   "millennium": {
     "type": "github",
@@ -75,9 +67,9 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "0ae2bc1419c3f345984c2629e72e7a631820fa4d",
-    "narHash": "sha256-vXNVDVtvfiQuXthP0NHPFdNvvMTkGpx0UP8oddIWbNk=",
-    "lastModified": 1787070829
+    "rev": "2c423e03bbafcff28bfadc6781a4a8257f205cb5",
+    "narHash": "sha256-dt4WdcvsA8/RCe+VZZwqU0X+XMM3wBbGCWA0/sFWzGo=",
+    "lastModified": 1787360063
   },
   "qt6ct-kde": {
     "type": "github",

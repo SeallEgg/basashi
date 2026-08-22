@@ -41,6 +41,7 @@ in {
     cacheDir = "/var/cache/ccache";
   };
 
+  programs.tack.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   programs.nh = {

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ config, inputs, lib, pkgs, ... }: {
   imports = [ inputs.nixdg-ninja.nixosModules.nixdg-ninja ];
 
   options.basashi.desktop.environment.xdg.enable =
