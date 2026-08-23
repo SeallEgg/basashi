@@ -16,7 +16,8 @@ let
         ;;
     esac
   '';
-in {
+in
+{
   options.basashi.services.powersaving.enable = lib.mkEnableOption "power saving optimizations";
 
   config = mkIf cfg.enable {

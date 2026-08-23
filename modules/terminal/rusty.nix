@@ -2,7 +2,8 @@
 let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.basashi.terminal;
-in {
+in
+{
   options.basashi.terminal.rusty.enable =
     mkEnableOption "modern, generally rust-based replacements for classic utilities";
   # in actuality, I just thought the name was cute
@@ -25,8 +26,10 @@ in {
         lla = "ls --long --git --header -a";
       };
     };
-    basashi.internal.extraFishInit = mkIf cfg.fish.enable [''
-      ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
-    ''];
+    basashi.internal.extraFishInit = mkIf cfg.fish.enable [
+      ''
+        ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
+      ''
+    ];
   };
 }

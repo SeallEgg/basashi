@@ -5,7 +5,8 @@ let
   # tack adds __functor to the inputs which has to be filtered
   flakeInputs = lib.filterAttrs (n: _: n != "__functor") inputs;
   nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-in {
+in
+{
   nix = {
     package = pkgs.nixVersions.git;
     channel.enable = false;

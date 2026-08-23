@@ -51,7 +51,8 @@ let
         }
       ];
     };
-in {
+in
+{
   nixosModules = modules.tree // {
     default = {
       imports = modules.list;
@@ -60,6 +61,6 @@ in {
   };
   nixosConfigurations =
     lib.mapAttrs (name: path: mkSystem name path) (lib.filterAttrs (n: v: !isAttrs v) hosts.tree);
-  # formatter = lib.genAttrs [ "x86_64-linux" "aarch64-linux" ]
-  #   (system: inputs.nixpkgs.legacyPackages.${system}.haskellPackages.nixfmt);
+  formatter = lib.genAttrs [ "x86_64-linux" "aarch64-linux" ]
+    (system: inputs.nixpkgs.legacyPackages.${system}.nixpkgs-fmt);
 }

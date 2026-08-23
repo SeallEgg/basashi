@@ -2,7 +2,8 @@
 let
   cfg = config.basashi;
   inherit (lib) mkDefault mkEnableOption mkForce mkIf mkMerge;
-in {
+in
+{
   options.basashi = {
     core.kernelParams = {
       quietBoot.enable = mkEnableOption "quiet boot";

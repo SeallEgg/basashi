@@ -38,7 +38,8 @@ let
       kernelParams = [ "console=tty0" "console=ttyS0,115200n8" ];
     };
   };
-in {
+in
+{
   options.basashi.core.virtualization.guest = {
     enable = mkEnableOption "guest integration and general setup for running this host inside a vm";
 

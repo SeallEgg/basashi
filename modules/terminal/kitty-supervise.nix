@@ -110,4 +110,5 @@ let
       main "$@"
     '';
   };
-in { config = lib.mkIf config.basashi.terminal.agents.enable { hj.packages = [ ksup ]; }; }
+in
+{ config = lib.mkIf config.basashi.terminal.agents.enable { hj.packages = [ ksup ]; }; }

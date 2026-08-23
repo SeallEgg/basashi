@@ -9,7 +9,8 @@ let
     chmod -R u+w $out
     sed -i '/JackControl "''${var:HeadphonesJack}"/d' "$out/USB-Audio/Realtek/ALC4080-HiFi.conf"
   '';
-in {
+in
+{
   options.basashi.services.pipewire = {
     enable = lib.mkEnableOption "pipewire and associate utilities";
     noJackDetectAlc4080 =

@@ -5,7 +5,8 @@ let
   zrAlgo = cfg.zram.algorithm;
   zramSwappinessDefault = if zrAlgo == "lz4" then 160 else if zrAlgo == "zstd-1" then 140 else 120;
   zramSizeDefault = if zrAlgo == "zstd" then 240 else if zrAlgo == "zstd-1" then 200 else 165;
-in {
+in
+{
   options.basashi.core.swap = {
     file = {
       enable = mkEnableOption "swapfile on /var/swap (must be properly formatted in btrfs)";

@@ -2,7 +2,8 @@
 let
   inherit (lib) mkIf mkEnableOption mkOption types;
   cfg = config.basashi.services.hibernation;
-in {
+in
+{
   options.basashi.services.hibernation = {
     enable = mkEnableOption "hibernation support";
     resumeDevice = mkOption {

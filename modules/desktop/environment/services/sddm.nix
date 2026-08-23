@@ -9,12 +9,14 @@ let
 
   # weston kiosk only ever paints the greeter on a single output, and it doesn't
   # reliably pick the right one. switching the rest off pins it to the main display.
-  outputSections = lib.concatMapStrings (m: ''
+  outputSections = lib.concatMapStrings
+    (m: ''
 
     [output]
     name=${m.name}
     mode=${if m.name == primary.name then m.res else "off"}
-  '') monitors;
+  '')
+    monitors;
 
   westonIni = pkgs.writeText "weston.ini" (''
     [shell]
@@ -28,7 +30,8 @@ let
     keymap_variant=${xkb.variant}
     keymap_options=${xkb.options}
   '' + lib.optionalString (monitors != [ ]) outputSections);
-in {
+in
+{
   options.basashi.services.sddm.enable = lib.mkEnableOption "SDDM";
 
   config = mkIf cfg.enable {

@@ -2,7 +2,8 @@
 let
   inherit (lib) mkIf;
   cfg = config.basashi.core.hardware.gpu.nvidia;
-in {
+in
+{
   options.basashi.core.hardware.gpu.nvidia = { enable = lib.mkEnableOption "nvidia"; };
 
   config = mkIf cfg.enable {

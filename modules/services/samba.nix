@@ -1,14 +1,17 @@
 { config, lib, ... }:
 let
   cfg = config.basashi.services.filesharing.samba;
-  mkSambaShares = lib.mapAttrs (name: path: {
-    "path" = path;
-    "read only" = "no";
-    "guest ok" = "yes";
-    "browseable" = "yes";
-    "force user" = "${config.basashi.core.username}";
-  }) cfg.shares;
-in {
+  mkSambaShares = lib.mapAttrs
+    (name: path: {
+      "path" = path;
+      "read only" = "no";
+      "guest ok" = "yes";
+      "browseable" = "yes";
+      "force user" = "${config.basashi.core.username}";
+    })
+    cfg.shares;
+in
+{
   options.basashi.services.filesharing.samba = {
     shares = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
@@ -69,7 +72,7 @@ in {
 
     systemd.tmpfiles.rules =
       lib.mapAttrsToList (name: path: "d ${path} 0775 ${config.basashi.core.username} users - -")
-      cfg.shares;
+        cfg.shares;
 
     basashi.services.avahi.enable = lib.mkDefault true;
   };

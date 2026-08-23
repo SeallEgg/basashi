@@ -6,10 +6,12 @@ let
     let
       opts = "(rw,nohide,insecure,no_subtree_check,async,no_root_squash)";
       subnetsWithOpts = map (subnet: "${subnet}${opts}") cfg.trustedSubnets;
-    in "${path} ${lib.concatStringsSep " " subnetsWithOpts}";
+    in
+    "${path} ${lib.concatStringsSep " " subnetsWithOpts}";
 
   nfsExports = lib.concatStringsSep "\n" (lib.mapAttrsToList mkNfsExport cfg.shares);
-in {
+in
+{
   options.basashi.services.filesharing.nfs = {
     shares = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
@@ -44,11 +46,13 @@ in {
     })
 
     (lib.mkIf (cfg.mounts != { }) {
-      fileSystems = lib.mapAttrs (mountPoint: remote: {
-        device = remote;
-        fsType = "nfs";
-        options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
-      }) cfg.mounts;
+      fileSystems = lib.mapAttrs
+        (mountPoint: remote: {
+          device = remote;
+          fsType = "nfs";
+          options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
+        })
+        cfg.mounts;
     })
   ];
 }

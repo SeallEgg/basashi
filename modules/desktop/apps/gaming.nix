@@ -4,7 +4,8 @@ let
   cfg = config.basashi.desktop.apps.gaming;
   anyEnabled = cfg.steam.enable || cfg.steam.ckan.enable
     || cfg.minecraft.enable;
-in {
+in
+{
   options.basashi.desktop.apps.gaming = {
     steam.enable = mkEnableOption "Steam";
     steam.ckan.enable = mkEnableOption "KSP modding helper CKAN";

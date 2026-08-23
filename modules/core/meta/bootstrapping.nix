@@ -3,7 +3,8 @@ let
   username = config.basashi.core.username;
   configDir = "/home/${username}/basashi";
   repoUrl = "https://github.com/seallegg/basashi.git";
-in {
+in
+{
   config = {
     environment.variables.FLAKE = configDir;
     programs.nh.flake = configDir;

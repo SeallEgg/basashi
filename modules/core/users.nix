@@ -2,7 +2,8 @@
 let
   inherit (lib.modules) mkAliasOptionModule;
   inherit (config.basashi.core) username;
-in {
+in
+{
   options.basashi.core.username = lib.mkOption {
     type = lib.types.str;
     default = "user";

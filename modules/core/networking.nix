@@ -2,7 +2,8 @@
 let
   inherit (lib) mkEnableOption mkIf mkMerge mkOption types;
   cfg = config.basashi.core.networking;
-in {
+in
+{
   options.basashi.core.networking = {
     staticIP = mkOption {
       type = types.attrsOf types.str;
@@ -23,13 +24,15 @@ in {
   config = mkMerge [
     {
       networking = {
-        interfaces = lib.mapAttrs (name: ip: {
-          useDHCP = false;
-          ipv4.addresses = [{
-            address = builtins.head (lib.splitString "/" ip);
-            prefixLength = lib.toInt (builtins.elemAt (lib.splitString "/" ip) 1);
-          }];
-        }) cfg.staticIP;
+        interfaces = lib.mapAttrs
+          (name: ip: {
+            useDHCP = false;
+            ipv4.addresses = [{
+              address = builtins.head (lib.splitString "/" ip);
+              prefixLength = lib.toInt (builtins.elemAt (lib.splitString "/" ip) 1);
+            }];
+          })
+          cfg.staticIP;
         defaultGateway = mkIf (cfg.defaultGateway != null) cfg.defaultGateway;
 
         dhcpcd.enable = false;
