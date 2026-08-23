@@ -50,6 +50,7 @@
       };
       g502.enable = true;
       idevices.enable = true;
+      pipewire.noJackDetectAlc4080 = true;
     };
   };
 

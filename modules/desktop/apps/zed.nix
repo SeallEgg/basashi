@@ -5,7 +5,7 @@
   config = lib.mkIf config.basashi.desktop.apps.zed.enable {
     hj.packages = with pkgs; [
       zed-editor
-      haskellPackages.nixfmt
+      # alejandra
       statix
       deadnix
       nixd

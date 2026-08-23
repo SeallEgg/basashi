@@ -27,11 +27,14 @@
       useBabelfish = true;
       shellAbbrs = {
         ns = "nh os switch";
-        nsu = "nh os switch -u";
         nb = "nh os boot";
-        nbu = "nh os boot -u";
+        nsu = "tu; nh os switch";
+        nbu = "tu; nh os boot";
       };
-      shellAliases = { up = "../"; };
+      shellAliases = {
+        up = "../";
+        tu = "pushd $FLAKE; tack update; popd";
+      };
 
       shellInit = lib.concatStringsSep "\n" config.basashi.internal.extraFishInit + ''
         set fish_greeting

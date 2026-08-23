@@ -1,0 +1,90 @@
+{
+  "apple-fonts": {
+    "type": "github",
+    "owner": "seallegg",
+    "repo": "apple-fonts-flake",
+    "rev": "bbd9287d655e42593b5164e666915421602e51a5",
+    "narHash": "sha256-CpKvAAmxcMLFTHBwn4OI8xeUbQwH+dFzD9HlmcdEowE=",
+    "lastModified": 1786052958
+  },
+  "cachyos-kernel": {
+    "type": "github",
+    "owner": "xddxdd",
+    "repo": "nix-cachyos-kernel",
+    "rev": "8b175fd266e94395ee7b1edc4578f7c8ecc74626",
+    "narHash": "sha256-8Tlb8D07EvNJ37S7wPYn/+lZ/eBRIvfLvrne3pvjd2A=",
+    "lastModified": 1787421204
+  },
+  "disko": {
+    "type": "github",
+    "owner": "nix-community",
+    "repo": "disko",
+    "rev": "ff8702b4de27f72b4c78573dfb89ec74e36abdf1",
+    "narHash": "sha256-RxWs5ND31KzTG7wvMM+PMfUjyNpmIEr999lqNARaM5o=",
+    "lastModified": 1781152676
+  },
+  "helium": {
+    "type": "github",
+    "owner": "schembriaiden",
+    "repo": "helium-browser-nix-flake",
+    "rev": "72a3f0cd428f04e1da9be5ea9554409f00ee4b20",
+    "narHash": "sha256-HSyz9Jbpz2Iz43lC1yYv2T+T3Lv+6coLLDv2lFv1SfE=",
+    "lastModified": 1787300923
+  },
+  "hjem": {
+    "type": "github",
+    "owner": "feel-co",
+    "repo": "hjem",
+    "rev": "7cd7f1c567beaf5527781e0b51647a98acde54e6",
+    "narHash": "sha256-hMgbN6InoW+S5G/cqGrVwHUmOJcGIT/yUg1Xe6y7t8Q=",
+    "lastModified": 1787194407
+  },
+  "hjem-rum": {
+    "type": "github",
+    "owner": "snugnug",
+    "repo": "hjem-rum",
+    "rev": "217c6e1f445b3973ca8f988f070c9b84cceaa1ca",
+    "narHash": "sha256-LLToYudTlFqNY0NsG//CnE2I/zF0cpktX44ZhFJ2alY=",
+    "lastModified": 1787315974
+  },
+  "millennium": {
+    "type": "github",
+    "owner": "SteamClientHomebrew",
+    "repo": "Millennium",
+    "rev": "cdffbe6f5847ea93ad57f1a619f4726363969069",
+    "narHash": "sha256-k+rvAqwX9Ww1xh6Lt9UqPiFBxU4B7XA7jTqpCw/i0RQ=",
+    "lastModified": 1787091428
+  },
+  "nixdg-ninja": {
+    "type": "github",
+    "owner": "seallegg",
+    "repo": "nixdg-ninja",
+    "rev": "3cd83840d4613e9c87fe2ca54857ea5eeaf44af4",
+    "narHash": "sha256-M4dKtH7Uwfd73TNvwVcgT3nfvCGhSWOqnmFbhIg97AE=",
+    "lastModified": 1783534614
+  },
+  "nixpkgs": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "2c423e03bbafcff28bfadc6781a4a8257f205cb5",
+    "narHash": "sha256-dt4WdcvsA8/RCe+VZZwqU0X+XMM3wBbGCWA0/sFWzGo=",
+    "lastModified": 1787360063
+  },
+  "qt6ct-kde": {
+    "type": "github",
+    "owner": "seallegg",
+    "repo": "qt6ct-kde-flake",
+    "rev": "981ada1c393c7ff0c091b8b2330d500b5311efa9",
+    "narHash": "sha256-76tSBo2L9muFkrfwpXN+aDM9qVezRkQiyxbcwKcR9Y8=",
+    "lastModified": 1786659131
+  },
+  "tack": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "tack",
+    "rev": "62a67545adaf01b48d01ee73c0d16353ca68432e",
+    "narHash": "sha256-rTiX4SZ9Sjei3WzsW25nDTZweMRzA7ZunspkhDXkZfY=",
+    "lastModified": 1785878583
+  }
+}
